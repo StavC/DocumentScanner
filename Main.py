@@ -7,7 +7,7 @@ from skimage.filters import threshold_local
 
 def main():
 
-    image=cv2.imread('receipt.jpg')
+    image=cv2.imread('Resume.jpg')
 
     ratio=image.shape[0]/500.0
     orignal=image.copy()
@@ -33,7 +33,7 @@ def main():
         print(len(approx))
         if len(approx)==4:
             document=approx
-            #break
+            break
 
     print("STEP 2: Find contours of paper")
     cv2.drawContours(image, [document], -1, (0, 255, 0), 2)
